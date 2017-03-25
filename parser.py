@@ -186,7 +186,7 @@ def sanitise():
     # Clean the data
     teaching_ratings = clean_data(teaching_ratings)
     # Write new csv file
-    teaching_ratings.to_csv('data/TeachingRatings_Clean.csv', sep=',')
+    teaching_ratings.to_csv('data/TeachingRatings_Clean.csv', sep=',', index=False)
 
 if __name__ == "__main__":
     # Override warning
