@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from difflib import SequenceMatcher
 from include.Header import *
 
@@ -91,9 +92,9 @@ def check_range(data_frame, key):
     round_val = header.range_lookup[key]['round']
     # If the key is age, force cast as Integer for consistency
     if key == 'age':
-        mean = int(data_frame[key].mean().round(round_val))
+        mean = int(np.round(data_frame[key].mean(), round_val))
     else:
-        mean = data_frame[key].mean().round(round_val)
+        mean = np.round(data_frame[key].mean(), round_val)
     # Locate anomalies and replace with the rounded column-wise mean
     data_frame.loc[(data_frame[key] < lower_bound) | (data_frame[key] > upper_bound), key] = mean
 
