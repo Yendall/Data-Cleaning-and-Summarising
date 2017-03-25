@@ -1,6 +1,7 @@
 
 class Header:
 
+
     def __init__(self):
         pass
 
@@ -27,3 +28,20 @@ class Header:
             'float64': 'numeric_float',
             'boolean': 'boolean'
         }
+
+    range_lookup = \
+        {
+            'age': {'lower': 0, 'upper': 100, 'round': 0},
+            'eval': {'lower': 1, 'upper': 5, 'round': 1}
+        }
+
+    typo_lookup = \
+        {
+            'credits': ['more', 'single'],
+            'division': ['upper', 'lower'],
+            'native': ['yes', 'no'],
+            'tenure': ['yes', 'no'],
+            'gender': ['male', 'female'],
+            'minority': ['yes', 'no'],
+        }
+
