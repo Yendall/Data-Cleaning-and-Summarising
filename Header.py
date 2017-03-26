@@ -1,7 +1,14 @@
+#!/usr/bin/env python
+"""
+
+Header.py : Header Class File for storing look-up tables
+
+"""
+__author__ = "Max Yendall - s3436993"
+__version__ = "1.0"
+
 
 class Header:
-
-
     def __init__(self):
         pass
 
@@ -44,4 +51,3 @@ class Header:
             'gender': ['male', 'female'],
             'minority': ['yes', 'no'],
         }
-

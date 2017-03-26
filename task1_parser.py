@@ -1,7 +1,18 @@
-import pandas as pd
-import numpy as np
+#!/usr/bin/env python
+"""
+
+task1_parser.py : Parser which reads the TeachingRatings data-set and sanitises
+
+"""
+__author__ = "Max Yendall - s3436993"
+__version__ = "1.0"
+
 from difflib import SequenceMatcher
-from include.Header import *
+
+import numpy as np
+import pandas as pd
+
+from Header import *
 
 # Create a new header object for referencing
 header = Header()
@@ -181,12 +192,12 @@ def sanitise():
     :return: CSV File
     """
     # Read csv from file into a Pandas data frame
-    teaching_data = "data/TeachingRatings.csv"
+    teaching_data = "TeachingRatings.csv"
     teaching_ratings = pd.read_csv(teaching_data, sep=',', decimal='.')
     # Clean the data
     teaching_ratings = clean_data(teaching_ratings)
     # Write new csv file
-    teaching_ratings.to_csv('data/TeachingRatings_Clean.csv', sep=',', index=False)
+    teaching_ratings.to_csv('TeachingRatings_Clean.csv', sep=',', index=False)
 
 if __name__ == "__main__":
     """

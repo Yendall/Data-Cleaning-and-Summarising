@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+"""
+
+task2_plotter.py : Plots all clean data based on specifications
+
+"""
+__author__ = "Max Yendall - s3436993"
+__version__ = "1.0"
+
+
 import pandas as pd
 from pandas.tools.plotting import scatter_matrix
 import matplotlib.pyplot as plt
@@ -137,7 +147,7 @@ def begin_plotting():
     :return: XMing Plots
     """
     # Read csv from file into a Pandas data frame
-    teaching_data = "data/TeachingRatings_Clean.csv"
+    teaching_data = "TeachingRatings_Clean.csv"
     teaching_ratings = pd.read_csv(teaching_data, sep=',', decimal='.')
     # Plot basic and advanced plots
     basic_plot(teaching_ratings)
