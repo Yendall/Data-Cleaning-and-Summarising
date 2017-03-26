@@ -47,9 +47,10 @@ def basic_plot(data):
     plt.legend(shadow=True)
     plt.show()
 
-    # Plot pie chart for percentage of lecturers gender
+    # Plot bar chart for percentage of lecturers gender
     data['gender'].value_counts().plot(kind='bar')
     plt.title('Lecturers by Gender')
+    plt.ylabel('Number of Lecturers')
     plt.legend(shadow=True)
     plt.show()
 

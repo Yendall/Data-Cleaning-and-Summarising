@@ -44,6 +44,7 @@ def check_typos(data_frame, key):
     # Check if the data frame column has any values that aren't equal to the second value (this is pretty much always
     # True)
     sec_check = data_frame[key] != sec_val
+
     # Create a logical mask that combines the two statements above, to find values outside of the columns scope
     mask = data_frame[key][fir_check & sec_check].values
     # Declare similarity and set as 0 initially
@@ -51,7 +52,6 @@ def check_typos(data_frame, key):
     # Declare pointer to track where we are in the mask
     pointer = 0
     most_sim_val = ""
-
     for data in mask:
         # Compare expected values to typo value and calculate similarity
         for vals in header.typo_lookup[key]:
@@ -101,6 +101,7 @@ def check_range(data_frame, key):
     lower_bound = header.range_lookup[key]['lower']
     upper_bound = header.range_lookup[key]['upper']
     round_val = header.range_lookup[key]['round']
+
     # If the key is age, force cast as Integer for consistency
     if key == 'age':
         mean = int(np.round(data_frame[key].mean(), round_val))
@@ -138,6 +139,7 @@ def fill_na_mean(data_frame):
     :param data_frame: data frame column to populate
     :return: populated data frame
     """
+
     data_frame.fillna((data_frame.mean()), inplace=True)
     return data_frame
 
