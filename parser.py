@@ -133,9 +133,9 @@ def fill_na_mean(data_frame):
 
 def clean_data(data_frame):
     """
-
-    :param data_frame:
-    :return:
+    Starts the cleaning procedure and santises the entire dataset through various steps
+    :param data_frame: Entire data set
+    :return: Clean data set
     """
     for key, value in header.header.iteritems():
 
@@ -189,6 +189,9 @@ def sanitise():
     teaching_ratings.to_csv('data/TeachingRatings_Clean.csv', sep=',', index=False)
 
 if __name__ == "__main__":
+    """
+    Main function
+    """
     # Override warning
     pd.options.mode.chained_assignment = None  # default='warn'
     sanitise()
